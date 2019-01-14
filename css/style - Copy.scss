@@ -1,0 +1,212 @@
+*{margin: 0; padding: 0; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {margin: 0;padding: 0;border: 0;font-size: 100%;font: inherit;vertical-align: baseline;}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block;}
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Oswald:300,400,600,700|Raleway:400,500,600,700,800');
+
+*{ transition: all 0.5ms ease-in-out;}
+
+$theme:#e25050;
+$darktheme:#d14343;
+$white: #ffffff;
+$black:#000000;
+$lightblack:#202020;
+$grey:#cccccc;
+$lightgrey:#6D6E70;
+$vlgrey:#777777;
+$border:#4f4f4f;
+
+$Raleway: 'Raleway', sans-serif;
+$Oswald: 'Oswald', sans-serif;
+$Opensans:'Open Sans', sans-serif;
+
+.form-control:focus {
+    color: #495057;
+    background-color:transparent;
+    border-color:$border;
+    outline: 0;
+    box-shadow: 0 0 0 .2rem rgba(0,123,255,0);}
+
+* {margin: 0; padding: 0;}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius; }
+          html { font-size: 100% } 
+%text-ellipsis {white-space: nowrap;  overflow: hidden; text-overflow: ellipsis;}
+.wrapper{ width:100%; position: relative; max-width: 1366px; margin: auto;}
+.right_arw{position: absolute; bottom:10px; right:10px; z-index: 99;}
+.arw-up{ transition:all 0.5s;display:block;opacity:0;z-index:99;position:relative;right:5px;width: 100px;
+a{font:300 0.75rem/1.3125rem $Opensans; display: block; color: $theme; text-decoration: underline;}
+a:hover{ color:$darktheme;} }
+
+body{background-color:$white; font-family: $Oswald; }
+
+.box_hd{text-transform: uppercase; font: 700 1.5rem/1.875rem $Oswald;color: $white;letter-spacing: -0.5px;}
+.saprat{ margin: auto; width: 45px; display: inline-block; height: 1px; margin-bottom: 10px;background-color: $white;}
+.dark{
+    .box_hd{color:$lightblack !important;}
+    .saprat{background-color:$lightblack !important;}
+}
+
+/* header*/
+.container{max-width: 1200px; width: 100%;}
+.btn.focus, .btn:focus {outline: 0;box-shadow: 0 0 0 .2rem rgba(0,0,0,.0);}
+.slick-next::before, .slick-prev::before {font-size: 25px !important;}
+header.affix {position: fixed;top: 0;width: 100%;z-index: 999;}
+
+header{ 
+    .bg-dark{}
+    .container{ padding: 1rem .5rem; position: relative;
+        .call{ background-color: $theme; color: $white; position: absolute; bottom: -46px; right: 30px; cursor: pointer; z-index: 99;
+            i{ background-color: #bd4141; margin-right: 15px; padding: 11px;}}
+            .call:hover{ text-decoration: none;}
+        }
+    .bg-dark{background-color: $lightblack !important;
+        .nav-item{padding: .5rem;}
+        .active a{background-color: $theme; color: $white;}
+        .nav-link{ font:500 14px/24px $Oswald; text-transform: uppercase; padding:0.4rem 1rem !important;}
+    }
+}
+.slide_bx{
+    .carousel-inner{
+        .img-fluid{width: 100%;}
+    }
+    .fa-angle-left, .fa-angle-right{background-color: $lightblack; line-height: 1.8rem;
+        @include border-radius(50% !important); width: 30px !important; height: 30px !important;}
+        .fa-angle-left:hover, .fa-angle-right:hover{background: rgba(rgb(226, 226, 226), 0.1);}
+        .bnr_contnt{ max-width: 1000px; margin: auto; padding:0 15px;
+        left: 50%; top: 50%; width: 100%; -webkit-transform:translate(-50%, -50%); transform:translate(-50%, -50%);
+        position:absolute; color: $white; text-transform: uppercase;
+        p{
+            span{ background-color: $theme; display: inline-block; font: 500 0.75rem/ 0.75rem $Oswald; padding: 10px;}
+            small{ background-color: $lightblack; display: inline-block; font: 500 1.125rem/1.125rem $Oswald; padding: 10px;}
+        }
+        h2 strong{ background-color: $lightblack; display: inline-block; margin-bottom: 1px;  padding:10px}
+    }
+}
+.fitness{
+    .fitn_hd{color:$lightblack; font:600 1.875rem/1.875rem $Oswald;
+        span{color: $theme;}}
+    .fitn_sub{font: italic 500 1rem/1em $Opensans; color: #dadada;letter-spacing: -0.5px;}
+    article{
+        h3{ font:700 0.875rem/0.975rem $Oswald; 
+            img{ margin-right: 15px; vertical-align: middle; display: inline-block;}
+        }
+        p{font: 400 0.8125rem/1.15rem $Opensans; color: $vlgrey;}
+    }
+}
+
+.trainer_b{ background-image: url(../images/team_bg.jpg); background-repeat: no-repeat; background-position: left top; background-size: cover;
+    .card{ @include border-radius(0 !important); border: none !important; margin-bottom: 15px;}
+    .card-text{font:700 0.875rem/1.1rem $Oswald; color: $lightblack;text-transform: uppercase; @extend %text-ellipsis;}
+    .name_t{font: 400 0.75rem/0.85rem $Oswald; color: #afafaf;text-transform: uppercase;}
+    .trn-card{position: relative;
+        .card, .back {
+            transition: -webkit-transform 1s;
+            -webkit-transform-style: preserve-3d;
+            -webkit-backface-visibility: hidden;
+        }
+        .back {
+            overflow: hidden; left:0; right:0; bottom:0; top: 0;
+            position: absolute;	background: #FFF;
+            z-index: 1;
+            -webkit-transform: rotateY(-180deg);
+            h2{font:700 0.875rem/1.1rem $Oswald; color:$lightblack;text-transform: uppercase;margin-bottom: 5px; @extend %text-ellipsis;}
+            span{font:500 0.75rem/0.85rem $Oswald; color: $lightgrey;text-transform: uppercase; margin-bottom: 10px; display: block;}
+            p{font: 500 0.8125rem/1.1125rem $Opensans; color: $vlgrey;}
+        }
+    }
+    .trn-card:hover .back {-webkit-transform: rotateY(0);}
+    .trn-card:hover .card {-webkit-transform: rotateY(180deg);}
+}
+
+.gallary{
+    .gall_sub{font:italic 500 0.75rem/1.2em $Opensans; color:$vlgrey; padding-bottom: 25px;max-width: 525px; margin: auto;}
+    img{width: 100%; padding-bottom: 15px;}
+}
+
+.price_b{ background-color: #e25050;
+    .card_val{background-color:$darktheme; @include border-radius(0 !important); border-color:$darktheme;
+        .fa{font-size: 29px; padding-bottom: 10px;}
+        .stantd{ font: 500 1.125rem/1.145rem $Oswald; padding-bottom: 10px; text-transform: uppercase;}
+        h3{ font: 600 2.25rem/2.45rem $Oswald; padding-bottom: 10px; text-transform: uppercase;}
+            sup{ font-size: 17px; vertical-align: top;}
+        .c_left{border-right:#de4d4d solid 1px;}
+        .point{ list-style: none;
+            li{ list-style: none;padding-left: 15px; text-indent: -15px; font: 500 0.75rem/1.3125rem $Opensans;}
+            li::before{font: normal normal normal 14px/1 FontAwesome; content: "\f00c"; position: relative; left: -8px;}
+        }
+    }
+    .card_val:hover{border-color: #fff;background-color:transparent;}
+    .card_val:hover .c_left{border-right:#fff solid 1px;}
+}
+.partner_logo{
+    .slick-slide img{ width: auto;margin: auto;}
+    .slick-next::before, .slick-prev::before{color: #c9c9c9;}
+}
+
+footer{ background-color:$lightblack;
+    .twter{display: inline-block; padding: 10px 10px 10px 0; float: left;
+    .fa{font-size: 30px;}}
+    .coll_txt{font:300 0.8125rem/1.375rem $Opensans; position: relative; vertical-align: top; margin-bottom: 10px;float: left;  width: 80%;
+    span{color: #717171;}}
+    .social{ text-align: right;
+        .fa{ margin: 5px; color:$white;}
+        a{text-decoration: none; display: inline-block; margin: auto; text-align: center;}
+    }
+    .top_bdr{ border-top: #323232 solid 1px; background-image: url(../images/footer_bg.jpg); background-repeat: no-repeat; background-position:left;
+        h3{ font:700 0.875rem/1.32rem $Oswald;}
+        .small_txt{max-width: 355px;}
+        .small_txt, small a{ font:300 0.75rem/1.32rem $Opensans; color: #c6c6c6;}
+        small{ display: block;
+            a{display: block;
+                i{width: 15px; text-align: center;}
+            .fa{ margin-right: 15px; font-size:15px; vertical-align: middle;}}
+        }
+    }
+    .form_f{
+        input, textarea{font:500 0.75rem/1.32rem $Oswald; color: #656565; @include border-radius(0 !important); text-transform: uppercase; background-color: transparent; border-color: $border;}
+        textarea{height: 110px;}
+        .submit_bt{@include border-radius(0 !important);font:500 0.875rem/1.32rem $Oswald; background-color: $theme; color: $white; text-transform: uppercase;
+        i{padding-left: 10px; font-size: 15px;}}
+        p{font:300 0.75rem/1.32rem $Opensans; color: #c6c6c6;}
+    }
+    .copy_r{font:300 0.75rem/1.32rem $Opensans; color: #707070;}
+}
+
+
+
+
+
+
+@media(min-width:992px){
+   
+}
+@media(max-width:1150px){
+    footer .form_f .submit_bt{font-size:0.775rem;}
+    .price_b .card_val .stantd{ font-size: 1rem;}
+    .price_b .card_val h3 { font-size:1.9rem;}
+}
+@media(max-width:991px){
+    .slide_bx{
+        .img-fluid{ height: 250px;}
+    }
+}
+
+@media(max-width:767px){
+.slide_bx{
+    .img-fluid{ height: 200px;}
+    .bnr_contnt{
+        p{
+            span{font: 500 0.55rem/ 0.55rem $Oswald; padding:5px;}
+            small{ font: 500 .825rem/.825rem $Oswald; padding:5px;}
+        }
+        h2 strong{font: 700 .675rem/.675rem $Oswald; padding:5px}
+    }
+}
+.trainer_b .trn-card .back p {
+    font-size:0.6125rem; line-height: 0.8125rem; }
+}
